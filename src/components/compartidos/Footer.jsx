@@ -1,9 +1,9 @@
 import React from 'react';
-import './styles/footer.css';
+import styles from './styles/footer.module.css';
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className={styles.footer}>
       <small>
         Desarrollado por Anthony Gomez. @2023 - proyecto metas-app de academia X{' '}
       </small>

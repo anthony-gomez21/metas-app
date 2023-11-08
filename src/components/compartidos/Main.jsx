@@ -1,13 +1,13 @@
 import React from 'react';
-import './styles/main.css';
+import styles from './styles/main.module.css';
 import Vinculo from './Vinculo';
 import { ReactComponent as ListaSVG } from '../../img/lista.svg';
 import { ReactComponent as NuevaSVG } from '../../img/nueva.svg';
 
 function Main({ children }) {
   return (
-    <div className="principal">
-      <aside className="aside">
+    <div className={styles.principal}>
+      <aside className={styles.aside}>
         <Vinculo
           href="/lista"
           texto="Lista de Metas"
@@ -15,7 +15,7 @@ function Main({ children }) {
         ></Vinculo>
         <Vinculo href="/crear" texto="Nueva Meta" Icono={NuevaSVG} />
       </aside>
-      <main className="main">{children}</main>
+      <main className={styles.main}>{children}</main>
     </div>
   );
 }
