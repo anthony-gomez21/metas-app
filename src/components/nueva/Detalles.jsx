@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './detalles.module.css';
 
 function Detalles() {
   const opcionesDeFrecuencia = ['dia', 'semana', 'mes', 'año'];
@@ -6,48 +7,51 @@ function Detalles() {
   const iconos = ['✈️', '🏃', '🖥️', '📚', '💲'];
 
   return (
-    <div>
-      <form action="">
-        <label htmlFor="">
+    <div className="tarjeta">
+      <form action="" className="p-4">
+        <label className="label" htmlFor="">
           Descibe tu meta
-          <input placeholder="ej. Correr 30 minutos diarios" />
+          <input
+            className="input"
+            placeholder="ej. Correr 30 minutos diarios"
+          />
         </label>
-        <label htmlFor="">
+        <label className="label" htmlFor="">
           ¿Con que frecuencia deaseas cumplir tu meta?{' '}
           <span>(ej. 1 vez a la semana)</span>
-          <div>
-            <input type="number" />
-            <select name="" id="">
+          <div className="flex mb-6">
+            <input className="input mr-6" type="number" />
+            <select name="" id="" className="input">
               {opcionesDeFrecuencia.map((opcion) => (
                 <option value={opcion}>{opcion}</option>
               ))}
             </select>
           </div>
         </label>
-        <label htmlFor="">
+        <label className="label" htmlFor="">
           ¿Cuantas veces deaseas completar esta meta?
-          <input type="number" />
+          <input className="input" type="number" />
         </label>
-        <label htmlFor="">
+        <label className="label" htmlFor="">
           ¿Tienes una fecha limite?
-          <input type="date" />
+          <input className="input" type="date" />
         </label>
-        <label htmlFor="">
+        <label className="label" htmlFor="">
           ¿Cuantas veces haz completado ya esta meta?
-          <input type="number" />
+          <input className="input" type="number" />
         </label>
-        <label htmlFor="">
+        <label className="label" htmlFor="">
           Escoge el icono para la meta
-          <select name="" id="">
+          <select name="" id="" className="input">
             {iconos.map((icono) => (
               <option value={icono}>{icono}</option>
             ))}
           </select>
         </label>
       </form>
-      <div>
-        <button>Cancelar</button>
-        <button>Crear</button>
+      <div className={styles.botones}>
+        <button className="boton boton--negro">Crear</button>
+        <button className="boton boton--gris">Cancelar</button>
       </div>
     </div>
   );
